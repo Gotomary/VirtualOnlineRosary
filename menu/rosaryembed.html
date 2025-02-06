@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,67 +22,53 @@
 </head>
 <body>
 
-    <div id="beads-container">
-        <div class="bead" onclick="showPrayer(1)">⚪</div>
-        <div class="bead" onclick="showPrayer(2)">⚪</div>
-        <div class="bead" onclick="showPrayer(3)">⚪</div>
-        <div class="bead" onclick="showPrayer(4)">⚪</div>
-        <div class="bead" onclick="showPrayer(5)">⚪</div>
-        <div class="bead" onclick="showPrayer(6)">⚪</div>
-        <div class="bead" onclick="showPrayer(7)">⚪</div>
-        <div class="bead" onclick="showPrayer(8)">⚪</div>
-        <div class="bead" onclick="showPrayer(9)">⚪</div>
-        <div class="bead" onclick="showPrayer(10)">⚪</div>
-        <div class="bead" onclick="showPrayer(11)">⚪</div>
-        <div class="bead" onclick="showPrayer(12)">⚪</div>
-        <div class="bead" onclick="showPrayer(13)">⚪</div>
-    </div>
+<div id="beads-container">
+    <div class="bead" onclick="showPrayer(1)">⚪</div>
+    <div class="bead" onclick="showPrayer(2)">⚪</div>
+    <div class="bead" onclick="showPrayer(3)">⚪</div>
+    <div class="bead" onclick="showPrayer(4)">⚪</div>
+    <div class="bead" onclick="showPrayer(5)">⚪</div>
+    <div class="bead" onclick="showPrayer(6)">⚪</div>
+    <div class="bead" onclick="showPrayer(7)">⚪</div>
+    <div class="bead" onclick="showPrayer(8)">⚪</div>
+    <div class="bead" onclick="showPrayer(9)">⚪</div>
+    <div class="bead" onclick="showPrayer(10)">⚪</div>
+    <div class="bead" onclick="showPrayer(11)">⚪</div>
+    <div class="bead" onclick="showPrayer(12)">⚪</div>
+    <div class="bead" onclick="showPrayer(13)">⚪</div>
+</div>
 
-    <script>
-        function showPrayer(beadNumber) {
-            let prayerText;
-            switch (beadNumber) {
-                case 1:
-                    prayerText = "Our Father in heaven, hallowed be your Name, your kingdom come, your will be done, on earth as in heaven. Give us today our daily bread. Forgive us our sins as we forgive those who sin against us. Lead us not into temptation but deliver us from evil. Amen";
-                    break;
-                case 2:
-                    prayerText = "Hail, Mary, full of grace, the Lord is with thee. Blessed art thou amongst women and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.";
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                
-                case 6:
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    break;
-                case 10:
-                    break;
-                case 11:
-                    break;
-                case 12:
-                    prayerText = "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.";
-                    break;
-                case 13:
-                    prayerText = "Oh my Jesus, forgive us our sins. Save us from the fires of hell. Lead all souls in to heaven and help especially those most in need of Thy mercy. Amen.";
-                    break;
-                default:
-                    prayerText = "";
-            }
-            if (prayerText) {
-                alert(prayerText);
-                document.querySelector(`.bead:nth-child(${beadNumber})`).innerHTML = "🌹";
-            }
-        }
-    </script>
+<script>
+function showPrayer(beadNumber) {
+    let prayerText = "";
+
+    switch (beadNumber) {
+        case 1:
+            prayerText = "Our Father in heaven, hallowed be your Name, your kingdom come, your will be done, on earth as in heaven. Give us today our daily bread. Forgive us our sins as we forgive those who sin against us. Lead us not into temptation but deliver us from evil. Amen";
+            break;
+        case 2:
+            prayerText = "Hail, Mary, full of grace, the Lord is with thee. Blessed art thou amongst women and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.";
+            break;
+        case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
+            // Only change the bead's content to 🌹, no alert
+            document.querySelector(`.bead:nth-child(${beadNumber})`).innerHTML = "🌹";
+            return; // Exit function early to prevent further execution
+        case 12:
+            prayerText = "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.";
+            break;
+        case 13:
+            prayerText = "Oh my Jesus, forgive us our sins. Save us from the fires of hell. Lead all souls into heaven and help especially those most in need of Thy mercy. Amen.";
+            break;
+        default:
+            prayerText = "";
+    }
+
+    if (prayerText) {
+        alert(prayerText);
+        document.querySelector(`.bead:nth-child(${beadNumber})`).innerHTML = "🌹";
+    }
+}
+</script>
 
 </body>
 </html>
-
