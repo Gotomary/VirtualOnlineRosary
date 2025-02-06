@@ -2,4 +2,5 @@
 
 <p>Codes are provided as is without warranty. God bless.
   
-  <p><strong>Please pray for Our Lady's intentions.</strong></p><p> <a href="https://gotomary.com">www.gotomary.com</a></p></p></p>
+  <p><strong>Please pray for Our Lady's intentions.</strong>
+  <p> <a href="https://gotomary.com">www.gotomary.com</a></p></p></p>
