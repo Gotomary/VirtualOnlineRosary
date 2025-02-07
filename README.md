@@ -3,4 +3,4 @@
 <p align="center">Codes are provided as it is without warranty. God bless.
   
   <p align="center"><strong>Please pray for Our Lady's intentions.</strong>
-  <p align="center"> <a href="https://gotomary.com">www.gotomary.com</a></p></p></p>
+  <p align="center"> <a href='https://www.gotomary.com'>www.gotomary.com</a></p></p></p>
