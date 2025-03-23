@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Emoji Prayer Beads</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #beads-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bead {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin: 5px;
+            background-color: white;
+            border: 2px solid black; /* Changed border from dashed to solid */
+            cursor: pointer;
+        }
+
+        .hidden {
+            color: transparent;
+            background-color: transparent;
+        }
+
+        .hidden:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="beads-container"></div>
+
+    <script>
+        const container = document.getElementById("beads-container");
+
+        // Prayer pop-ups
+        const whitePrayer = "This is the prayer for the white bead.";
+        const purplePrayer = "This is the prayer for the purple bead.";
+
+        // Function to create a hidden bead
+        function createHiddenBead(emoji, prayer) {
+            const bead = document.createElement("div");
+            bead.className = "bead hidden";
+            bead.onclick = () => {
+                bead.textContent = emoji; // Reveal the emoji
+                bead.classList.remove("hidden"); // Remove the hidden style
+                alert(prayer); // Display the prayer
+            };
+            container.appendChild(bead);
+        }
+
+        // Create one white bead and three purple beads
+        createHiddenBead("⚪", whitePrayer);
+        for (let j = 0; j < 3; j++) {
+            createHiddenBead("🟣", purplePrayer);
+        }
+    </script>
+</body>
+</html>
