@@ -54,23 +54,23 @@
         const whitePrayer = "Hail Mary, full of grace, The Lord is with thee. Blessed art thou amongst women, And blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, Pray for us sinners, Now and at the hour of our death. Amen. x2";
         const purplePrayer = "Praised and blessed be Jesus, Mary, and Joseph!";
 
-        // Function to create a hidden bead
-        function createHiddenBead(emoji, prayer) {
-            const bead = document.createElement("div");
-            bead.className = "bead hidden";
-            bead.onclick = () => {
-                bead.textContent = emoji; // Reveal the emoji
-                bead.classList.remove("hidden"); // Remove the hidden style
-                alert(prayer); // Display the prayer
-            };
-            container.appendChild(bead);
-        }
+function createHiddenBead(emoji, prayer, backgroundColor) {
+    const bead = document.createElement("div");
+    bead.className = "bead hidden";
+    bead.style.backgroundColor = backgroundColor; // Set initial background color
+    bead.onclick = () => {
+        bead.textContent = emoji; // Reveal the emoji
+        bead.classList.remove("hidden"); // Remove the hidden style
+        alert(prayer); // Display the prayer
+    };
+    container.appendChild(bead);
+}
 
-        // Create one white bead and three purple beads
-        createHiddenBead("⚪", whitePrayer);
-        for (let j = 0; j < 3; j++) {
-            createHiddenBead("🟣", purplePrayer);
-        }
+// Create beads with specific initial colors
+createHiddenBead("⚪", whitePrayer, "white"); // First bead (white background)
+for (let j = 0; j < 3; j++) {
+    createHiddenBead("🟣", purplePrayer, "#d8b2d1"); // Next three beads (light purple background)
+} 
     </script>
 </body>
 </html>
