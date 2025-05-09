@@ -35,3 +35,41 @@
             text-align: left;
             cursor: pointer;
             text-decoration: underline;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- First box: Apostle's Creed -->
+        <div class="item">
+            <div class="square"></div>
+            <span class="label" onclick="showPrayer()">Apostle's Creed</span>
+        </div>
+
+        <!-- Generating 59 remaining squares -->
+        <script>
+            for (let i = 0; i < 59; i++) {
+                document.write(`
+                    <div class="item">
+                        <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span>
+                        </div>
+                        <span class="label">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                    </div>
+                `);
+            }
+        </script>
+    </div>
+
+    <script>
+        function showCross(element) {
+            element.querySelector('.cross').style.display = 'inline';
+        }
+
+        function showPrayer() {
+            alert("I believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son, our Lord...");
+        }
+    </script>
+</body>
+</html>
