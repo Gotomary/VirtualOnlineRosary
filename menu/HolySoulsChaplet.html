@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prayer Squares</title>
+    <title>Holy Soul’s Chaplet</title>
     <style>
         .container {
             display: flex;
@@ -30,33 +30,107 @@
         .cross {
             display: none;
         }
-        .label {
+        .label1{
             font-size: 14px;
             text-align: left;
             cursor: pointer;
-            text-decoration: underline;
             color: blue;
+            text-decoration: underline;
+           
         }
+
+      .label2{
+            font-size: 14px;
+            text-align: left;
+            cursor: pointer;
+           
+           
+        }
+
+
     </style>
 </head>
 <body>
+
+<h1>Chaplet of the Holy Souls</h1>
+<h2> The Chaplet can be prayed using normal rosary beads.</h2>
+<p> All who die in God's grace and friendship, but still imperfectly purified, are indeed assured of their eternal salvation; but after death they undergo purification, so as to achieve the holiness necessary to enter the joy of heaven. (CCC. 1030)<br/>
+<b>Instructions: Click on the squares as you pray the Chaplet. Click on the links to view the prayers if needed.<b></p>
     <div class="container">
         <!-- First box: Apostle's Creed -->
         <div class="item">
             <div class="square" onclick="showCross(this)">
                             <span class="cross">✝️</span></div>
-            <span class="label" onclick="showPrayer1()">Apostle's Creed</span>
+            <span class="label1" onclick="showPrayer('apostles')">Apostle's Creed</span>
         </div>
 
-        <!-- Generating 59 remaining squares -->
+   <div class="container">
+
+        <!-- Second box: Our Father -->
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('ourFather')">Our Father</span>
+        </div>
+
+   <div class="container">
+
+        <!-- Third, Fourth, and Fifth Boxes: Hail Mary -->
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('hailMary')">Hail Mary</span>
+        </div>
+
+   <div class="container">
+
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('hailMary')">Hail Mary</span>
+        </div>   <div class="container">
+
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('hailMary')">Hail Mary</span>
+        </div>
+
+   <div class="container">
+
+        <!-- Sixth Box: Glory Be -->
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('gloryBe')">Glory Be</span>
+        </div>
+
+   <div class="container">
+
+        <!-- Generating 50 remaining squares with special labels at every 10th position -->
         <script>
-            for (let i = 0; i < 59; i++) {
+            for (let i = 0; i < 50; i++) { // Adjusted count for last 3 Glory Be boxes
+                let labelText = (i === 0 || (i - 0) % 11=== 0) ? 
+                    "Oh Holy Souls, draw the fire of God's Love into my soul, to reveal Jesus crucified in me here on earth, rather than hereafter in Purgatory." : 
+                    "Crucified Lord Jesus, have mercy on the souls in purgatory.";
+
                 document.write(`
                     <div class="item">
                         <div class="square" onclick="showCross(this)">
                             <span class="cross">✝️</span>
                         </div>
-                        <span class="label">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                        <span class="label2">${labelText}</span>
+                    </div>
+                `);
+            }
+
+            // Adding the last 3 Glory Be boxes
+            for (let i = 0; i < 3; i++) {
+                document.write(`
+                    <div class="item">
+                        <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span></div>
+                        <span class="label1" onclick="showPrayer('gloryBe')">Glory Be</span>
                     </div>
                 `);
             }
@@ -68,8 +142,28 @@
             element.querySelector('.cross').style.display = 'inline';
         }
 
-        function showPrayer1() {
-            alert("I believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son, our Lord...");
+        function showPrayer(prayerType) {
+            let prayerText = "";
+            if (prayerType === "apostles") {
+                prayerText = "I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; he descended into hell; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.";
+            } else if (prayerType === "ourFather") {
+                prayerText = "Our Father who art in heaven,
+Hallowed be thy name.
+Thy kingdom come.
+Thy will be done
+on earth as it is in heaven.
+Give us this day our daily bread,
+and forgive us our trespasses,
+as we forgive those who trespass against us,
+and lead us not into temptation,
+but deliver us from evil.";
+            } else if (prayerType === "hailMary") {
+                prayerText = "Hail Mary, full of grace, the Lord is with thee; blessed art thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of death. Amen.";
+            } else if (prayerType === "gloryBe") {
+                prayerText = "Glory to the Father, and to the Son, and to the Holy Spirit,
+As it was in the beginning, and now, and ever shall be, world without end. Amen.";
+            }
+            alert(prayerText);
         }
     </script>
 </body>
