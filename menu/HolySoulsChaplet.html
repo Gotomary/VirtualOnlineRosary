@@ -43,8 +43,9 @@
     <div class="container">
         <!-- First box: Apostle's Creed -->
         <div class="item">
-            <div class="square"></div>
-            <span class="label" onclick="showPrayer()">Apostle's Creed</span>
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span></div>
+            <span class="label" onclick="showPrayer1()">Apostle's Creed</span>
         </div>
 
         <!-- Generating 59 remaining squares -->
@@ -67,7 +68,7 @@
             element.querySelector('.cross').style.display = 'inline';
         }
 
-        function showPrayer() {
+        function showPrayer1() {
             alert("I believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son, our Lord...");
         }
     </script>
