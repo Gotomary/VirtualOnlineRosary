@@ -15,36 +15,40 @@
             align-items: center;
             gap: 10px;
         }
-        .square {
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            border: 3px solid black;
-            
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: bold;
-        }
+
+        <style>
+    .square {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: 3px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .label1{
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+        text-decoration: underline;
+        color: blue;
+        max-width: 220px; /* Ensures text wraps neatly */
+        word-wrap: break-word;
+    }
+
+         .label2{
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+        max-width: 220px; /* Ensures text wraps neatly */
+        word-wrap: break-word;
+    }
+
         .cross {
             display: none;
-        }
-        .label1{
-            font-size: 14px;
-            text-align: left;
-            cursor: pointer;
-            color: blue;
-            text-decoration: underline;
-           
-        }
-
-      .label2{
-            font-size: 14px;
-            text-align: left;
-            cursor: pointer;
-           
-           
         }
 
 
