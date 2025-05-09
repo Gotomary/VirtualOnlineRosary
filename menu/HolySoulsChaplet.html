@@ -132,25 +132,118 @@
         </div>
 
    <div class="container">
-
-        <!-- Generating 55 remaining squares with special labels at every 10th position -->
+     
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('ohHolySouls')">Oh Holy Souls</span>
+        </div>
+        <!-- Generating 10 squares -->
         <script>
-            for (let i = 0; i < 55; i++) { // Adjusted count for last 3 Glory Be boxes
-                let labelText = (i === 0 || (i - 0) % 11=== 0) ? 
-                    "Oh Holy Souls, draw the fire of God's Love into my soul, to reveal Jesus crucified in me here on earth, rather than hereafter in Purgatory." : 
-                    "Crucified Lord Jesus, have mercy on the souls in purgatory.";
 
+            // Adding the last 10 Crucified Lord Jesus boxes
+            for (let i = 0; i < 10; i++) {
                 document.write(`
                 <div class="container">
                     <div class="item">
                         <div class="square" onclick="showCross(this)">
-                            <span class="cross">✝️</span>
-                        </div>
-                        <span class="label2">${labelText}</span>
-                    </div></div>
+                            <span class="cross">✝️</span></div>
+                        <span class="label2">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                   </div> </div>
                 `);
             }
+        </script>
+<div class="container">
+     
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('ohHolySouls')">Oh Holy Souls</span>
+        </div>
+        <!-- Generating 10 squares -->
+        <script>
 
+            // Adding the last 10 Crucified Lord Jesus boxes
+            for (let i = 0; i < 10; i++) {
+                document.write(`
+                <div class="container">
+                    <div class="item">
+                        <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span></div>
+                        <span class="label2">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                   </div> </div>
+                `);
+            }
+        </script>
+
+    <div class="container">
+     
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('ohHolySouls')">Oh Holy Souls</span>
+        </div>
+        <!-- Generating 10 squares -->
+        <script>
+
+            // Adding the last 10 Crucified Lord Jesus boxes
+            for (let i = 0; i < 10; i++) {
+                document.write(`
+                <div class="container">
+                    <div class="item">
+                        <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span></div>
+                        <span class="label2">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                   </div> </div>
+                `);
+            }
+        </script>
+        <div class="container">
+     
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('ohHolySouls')">Oh Holy Souls</span>
+        </div>
+        <!-- Generating 10 squares -->
+        <script>
+
+            // Adding the last 10 Crucified Lord Jesus boxes
+            for (let i = 0; i < 10; i++) {
+                document.write(`
+                <div class="container">
+                    <div class="item">
+                        <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span></div>
+                        <span class="label2">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                   </div> </div>
+                `);
+            }
+        </script>
+            <div class="container">
+     
+        <div class="item">
+            <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span> </div>
+            <span class="label1" onclick="showPrayer('ohHolySouls')">Oh Holy Souls</span>
+        </div>
+        <!-- Generating 10 squares -->
+        <script>
+
+            // Adding the last 10 Crucified Lord Jesus boxes
+            for (let i = 0; i < 10; i++) {
+                document.write(`
+                <div class="container">
+                    <div class="item">
+                        <div class="square" onclick="showCross(this)">
+                            <span class="cross">✝️</span></div>
+                        <span class="label2">Crucified Lord Jesus, have mercy on the souls in purgatory.</span>
+                   </div> </div>
+                `);
+            }
+        </script>
+
+       <script>
             // Adding the last 3 Glory Be boxes
             for (let i = 0; i < 3; i++) {
                 document.write(`
@@ -180,7 +273,8 @@
                 prayerText = "Hail Mary, full of grace, the Lord is with thee; blessed art thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of death. Amen.";
             } else if (prayerType === "gloryBe") {
                 prayerText = "Glory to the Father, and to the Son, and to the Holy Spirit, As it was in the beginning, and now, and ever shall be, world without end. Amen.";
-            }
+            } else if (prayerType === "ohHolySouls") {
+                prayerText = "Oh Holy Souls, draw the fire of God's Love into my soul, to reveal Jesus crucified in me here on earth, rather than hereafter in Purgatory.";
             alert(prayerText);
         }
     </script>
