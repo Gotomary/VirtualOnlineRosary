@@ -2,5 +2,5 @@
 
 <p align="center">Codes are provided as it is without warranty. God bless.
   
-  <p align="center"><strong>Please pray for Our Lady's intentions.</strong>
+  <p align="center"><strong>Please pray for Our Lady's intentions. Consecrated to The Immaculate Heart of Mary.</strong>
   <p align="center"> <a href='https://www.gotomary.com'>www.gotomary.com</a></p></p></p>
