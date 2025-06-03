@@ -11,7 +11,165 @@
     <title>Saint Michael's Virtual Chaplet</title>
     
 </head>
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
 
+    .menubutton {
+            background-color: #add8e6; /* Light blue color */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menubutton:hover {
+            background-color: blue; /* Darker light blue on hover */
+        }
+.button {
+    background: #cfe7fa;
+    background: -moz-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cfe7fa), color-stop(100%, #6393c1));
+    background: -webkit-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
+    background: -o-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
+    background: -ms-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
+    background: linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
+    border: 1px solid #6393c1;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .5);
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    display: inline-block;
+    font: 15px Arial, Verdana, Geneva, sans-serif;
+    line-height: 41px;
+    padding-right: 20px;
+}
+
+.button:hover .inner {
+    opacity: .5;
+}
+
+.button input {
+    display: none;
+}
+
+.button input:checked + .outer .inner {
+    opacity: 1;
+}
+
+.button .outer {
+    background: #2989d8;
+    background: -moz-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #2989d8), color-stop(99%, #101354));
+    background: -webkit-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
+    background: -o-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
+    background: -ms-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
+    background: radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
+    border: 1px solid black;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    display: block;
+    float: left;
+    height: 20px;
+    margin: 10px;
+    width: 20px;
+}
+
+.button .inner {
+    background: #e4f5fc;
+    background: -moz-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e4f5fc), color-stop(50%, #bfe8f9), color-stop(51%, #9fd8ef), color-stop(100%, #2ab0ed));
+    background: -webkit-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    background: -o-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    background: radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    display: block;
+    height: 14px;
+    margin: 3px;
+    opacity: 0;
+    -moz-transition: opacity .5s;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+    width: 14px;
+}
+
+.modalDialog {
+ color: #000;
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+overflow: auto;
+width: 100%;
+height: 100%;
+    }
+
+    .modalDialog:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+
+    .modalDialog > div {
+        width: 400px;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+
+    .close {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .close:hover { background: #00d9ff; }
+ 
+  </style>
+  <body>
 <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="menu/images/IMG_2567.jpeg" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="IMG_1167.jpeg" width="257" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Guido Reni, Public domain, via Wikimedia Commons</td></tr></tbody></table>
 
 
@@ -570,142 +728,4 @@ Interactive Virtual Saint Michael Chaplet originally published by <a href="http:
 <br>
 
 
-
-<style>
-
-
-.button {
-    background: #cfe7fa;
-    background: -moz-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cfe7fa), color-stop(100%, #6393c1));
-    background: -webkit-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
-    background: -o-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
-    background: -ms-linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
-    background: linear-gradient(top, #cfe7fa 0%, #6393c1 100%);
-    border: 1px solid #6393c1;
-    -moz-border-radius: 40px;
-    -webkit-border-radius: 40px;
-    border-radius: 40px;
-    -moz-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .5);
-    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .5);
-    cursor: pointer;
-    display: inline-block;
-    font: 15px Arial, Verdana, Geneva, sans-serif;
-    line-height: 41px;
-    padding-right: 20px;
-}
-
-.button:hover .inner {
-    opacity: .5;
-}
-
-.button input {
-    display: none;
-}
-
-.button input:checked + .outer .inner {
-    opacity: 1;
-}
-
-.button .outer {
-    background: #2989d8;
-    background: -moz-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #2989d8), color-stop(99%, #101354));
-    background: -webkit-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
-    background: -o-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
-    background: -ms-radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
-    background: radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
-    border: 1px solid black;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
-    display: block;
-    float: left;
-    height: 20px;
-    margin: 10px;
-    width: 20px;
-}
-
-.button .inner {
-    background: #e4f5fc;
-    background: -moz-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e4f5fc), color-stop(50%, #bfe8f9), color-stop(51%, #9fd8ef), color-stop(100%, #2ab0ed));
-    background: -webkit-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-    background: -o-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-    background: radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
-    display: block;
-    height: 14px;
-    margin: 3px;
-    opacity: 0;
-    -moz-transition: opacity .5s;
-    -webkit-transition: opacity .5s;
-    -o-transition: opacity .5s;
-    transition: opacity .5s;
-    width: 14px;
-}
-
-.modalDialog {
- color: #000;
-        position: fixed;
-        font-family: Arial, Helvetica, sans-serif;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0,0,0,0.8);
-        z-index: 99999;
-        opacity:0;
-        -webkit-transition: opacity 400ms ease-in;
-        -moz-transition: opacity 400ms ease-in;
-        transition: opacity 400ms ease-in;
-        pointer-events: none;
-overflow: auto;
-width: 100%;
-height: 100%;
-    }
-
-    .modalDialog:target {
-        opacity:1;
-        pointer-events: auto;
-    }
-
-    .modalDialog > div {
-        width: 400px;
-        position: relative;
-        margin: 10% auto;
-        padding: 5px 20px 13px 20px;
-        border-radius: 10px;
-        background: #fff;
-        background: -moz-linear-gradient(#fff, #999);
-        background: -webkit-linear-gradient(#fff, #999);
-        background: -o-linear-gradient(#fff, #999);
-    }
-
-    .close {
-        background: #606061;
-        color: #FFFFFF;
-        line-height: 25px;
-        position: absolute;
-        right: -12px;
-        text-align: center;
-        top: -10px;
-        width: 24px;
-        text-decoration: none;
-        font-weight: bold;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
-        border-radius: 12px;
-        -moz-box-shadow: 1px 1px 3px #000;
-        -webkit-box-shadow: 1px 1px 3px #000;
-        box-shadow: 1px 1px 3px #000;
-    }
-
-    .close:hover { background: #00d9ff; }
-
-</style>
 </div>
